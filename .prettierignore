@@ -1,0 +1,6 @@
+.nuxt
+dist
+package-lock.json
+static
+assets
+node_modules

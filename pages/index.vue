@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        Lost Trail Parking Lot
+        {{ page.title }}
       </h1>
       <div class="links">
         <a
@@ -12,7 +12,7 @@
           rel="noopener noreferrer"
           class="button--green"
         >
-          Documentation
+          Documentation t
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
@@ -28,7 +28,25 @@
 </template>
 
 <script>
-export default {}
+import { request, gql } from '@/apollo/datocms'
+
+
+export default {
+  async asyncData() {
+    const data = await request({
+      query: gql`
+        {
+          page: homePage {
+            title
+          }
+        }
+      `
+    })
+
+    return { ready: !!data, ...data }
+  },
+
+}
 </script>
 
 <style>
@@ -44,6 +62,7 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: red;
 }
 
 .title {
