@@ -50,8 +50,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
-  color: red;
 }
 
 .title {
