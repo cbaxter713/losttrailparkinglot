@@ -12,7 +12,7 @@
           rel="noopener noreferrer"
           class="button--green"
         >
-          Documentation t
+          Documentation
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
@@ -28,8 +28,7 @@
 </template>
 
 <script>
-import { request, gql } from '@/apollo/datocms'
-
+import { request, gql } from '@/cms/datocms'
 
 export default {
   async asyncData() {
