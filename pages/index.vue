@@ -1,29 +1,13 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        {{ page.title }}
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <h1 class="title">
+      {{ page.title }}
+    </h1>
+    <ul v-if="posts" class="posts-list">
+      <li v-for="post in posts" :key="`post-${post.slug}`" class="post-item">
+        <nuxt-link :to="routes.post(post.slug)">{{post.title}}</nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -37,6 +21,12 @@ export default {
         {
           page: homePage {
             title
+          }
+
+          posts: allPosts(first: 3) {
+            slug
+            title
+            description
           }
         }
       `
@@ -60,8 +50,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
-  color: red;
 }
 
 .title {
