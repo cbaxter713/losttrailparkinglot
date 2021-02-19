@@ -1,11 +1,13 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        {{ page.title }}
-      </h1>
-    </div>
+    <h1 class="title">
+      {{ page.title }}
+    </h1>
+    <ul v-if="posts" class="posts-list">
+      <li v-for="post in posts" :key="`post-${post.slug}`" class="post-item">
+        <nuxt-link :to="routes.post(post.slug)">{{post.title}}</nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -19,6 +21,12 @@ export default {
         {
           page: homePage {
             title
+          }
+
+          posts: allPosts(first: 3) {
+            slug
+            title
+            description
           }
         }
       `
