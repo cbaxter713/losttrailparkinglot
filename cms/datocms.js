@@ -1,32 +1,32 @@
-import axios from 'axios'
-import gql from 'graphql-tag'
+import axios from 'axios';
+import gql from 'graphql-tag';
 
-export { default as gql } from 'graphql-tag'
+export {default as gql} from 'graphql-tag';
 
-export async function request({ query, variables, preview }) {
-  const endpoint = preview
-    ? `https://graphql.datocms.com/preview`
-    : `https://graphql.datocms.com/`
+export async function request({query, variables}) {
+  const endpoint =
+    process.env.NUXT_ENV_CONTENT_PREVIEW && process.env.NUXT_ENV_CONTENT_PREVIEW === 'true'
+      ? `https://graphql.datocms.com/preview`
+      : `https://graphql.datocms.com/`;
 
-  const { data } = await axios.post(
+  const {data} = await axios.post(
     endpoint,
     {
       query: query.loc && query.loc.source.body,
-      variables
+      variables,
     },
     {
       headers: {
-        Authorization:
-          `Bearer ${process.env.NUXT_ENV_DATOCMS_API_TOKEN}`
-      }
+        Authorization: `Bearer ${process.env.NUXT_ENV_DATOCMS_API_TOKEN}`,
+      },
     }
-  )
+  );
 
   if (data.errors) {
-    throw JSON.stringify(data.errors)
+    throw JSON.stringify(data.errors);
   }
 
-  return data.data
+  return data.data;
 }
 
 export const imageFields = gql`

@@ -5,14 +5,14 @@
     </h1>
     <ul v-if="posts" class="posts-list">
       <li v-for="post in posts" :key="`post-${post.slug}`" class="post-item">
-        <nuxt-link :to="routes.post(post.slug)">{{post.title}}</nuxt-link>
+        <nuxt-link :to="routes.post(post.slug)">{{ post.title }}</nuxt-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { request, gql } from '@/cms/datocms'
+import {request, gql} from '@/cms/datocms';
 
 export default {
   async asyncData() {
@@ -29,13 +29,12 @@ export default {
             description
           }
         }
-      `
-    })
+      `,
+    });
 
-    return { ready: !!data, ...data }
+    return {ready: !!data, ...data};
   },
-
-}
+};
 </script>
 
 <style>
@@ -55,16 +54,8 @@ export default {
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
