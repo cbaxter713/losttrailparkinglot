@@ -50,7 +50,7 @@ $title-breakpoint: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4.44vw;
 
   * {
@@ -69,7 +69,7 @@ $title-breakpoint: 900px;
 
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://losttrail.com/files/2020/09/IMG_7138_1.jpg);
+  background-image: url(https://media2.giphy.com/media/l2x7mzCCX7oDX2r0PD/giphy.gif);
 
   @media (min-width: $title-breakpoint) {
     max-width: 900px;
