@@ -35,24 +35,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
-$background-color: #000;
-$title-breakpoint: 900px;
-
+<style>
 .home-page {
-  background-color: $background-color;
+  background-color: #000;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 4.44vw;
-
-  * {
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-  }
 }
 
 .title-container {
@@ -65,10 +56,6 @@ $title-breakpoint: 900px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(https://media2.giphy.com/media/l2x7mzCCX7oDX2r0PD/giphy.gif);
-
-  @media (min-width: $title-breakpoint) {
-    max-width: 900px;
-  }
 }
 
 .title {
@@ -77,8 +64,10 @@ $title-breakpoint: 900px;
   font-size: 20vw;
   font-weight: 600;
   line-height: 1;
+}
 
-  @media (min-width: $title-breakpoint) {
+@media (min-width: 900px) {
+  .title {
     font-size: 200px;
   }
 }
