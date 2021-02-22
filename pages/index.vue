@@ -6,11 +6,6 @@
         <span class="dotcom">.com</span>
       </h1>
     </div>
-    <!--    <ul v-if="posts" class="posts-list">-->
-    <!--      <li v-for="post in posts" :key="`post-${post.slug}`" class="post-item">-->
-    <!--        <nuxt-link :to="routes.post(post.slug)">{{ post.title }}</nuxt-link>-->
-    <!--      </li>-->
-    <!--    </ul>-->
   </article>
 </template>
 
