@@ -1,14 +1,17 @@
 <template>
-  <div class="container">
-    <h1 class="title">
-      {{ page.title }}
-    </h1>
-    <ul v-if="posts" class="posts-list">
-      <li v-for="post in posts" :key="`post-${post.slug}`" class="post-item">
-        <nuxt-link :to="routes.post(post.slug)">{{ post.title }}</nuxt-link>
-      </li>
-    </ul>
-  </div>
+  <article class="home-page">
+    <div class="title-container">
+      <h1 class="title">
+        Lost Trail Parking Lot
+        <span class="dotcom">.com</span>
+      </h1>
+    </div>
+    <!--    <ul v-if="posts" class="posts-list">-->
+    <!--      <li v-for="post in posts" :key="`post-${post.slug}`" class="post-item">-->
+    <!--        <nuxt-link :to="routes.post(post.slug)">{{ post.title }}</nuxt-link>-->
+    <!--      </li>-->
+    <!--    </ul>-->
+  </article>
 </template>
 
 <script>
@@ -37,41 +40,54 @@ export default {
 };
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style lang="scss">
+$background-color: #000;
+$title-breakpoint: 900px;
+
+.home-page {
+  background-color: $background-color;
+  color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  text-align: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 4.44vw;
+
+  * {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.title-container {
+  width: fit-content;
+
+  /* The magic */
+  -webkit-background-clip: text;
+  color: transparent;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://losttrail.com/files/2020/09/IMG_7138_1.jpg);
+
+  @media (min-width: $title-breakpoint) {
+    max-width: 900px;
+  }
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  font-size: 20vw;
+  font-weight: 600;
+  line-height: 1;
+
+  @media (min-width: $title-breakpoint) {
+    font-size: 200px;
+  }
+}
+
+.dotcom {
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
