@@ -1,0 +1,166 @@
+.fade-in {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.shoe-finder-step {
+  &-enter-active {
+    transition: all 0.75s $easing-cubic;
+  }
+
+  &-leave-active {
+    transition: all 0.6s $easing-cubic;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translate3d(0, 2vh, 0);
+    opacity: 0;
+  }
+}
+
+.shoe-finder-nav {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.5s ease-in-out;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translate3d(0, 50%, 0);
+    opacity: 0;
+  }
+}
+
+.nav {
+  &-enter-active {
+    transition: all 0.5s ease $nav-content-fade-in-delay;
+  }
+
+  &-leave-active {
+    transition: all $nav-content-fade-out-delay ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.navBackground {
+  &-enter-active {
+    transition: all $nav-content-fade-in-delay ease;
+  }
+
+  &-leave-active {
+    transition: all 0.3s ease $nav-content-fade-out-delay;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translatey(-100%);
+  }
+}
+
+.navBackgroundOverlay {
+  &-enter-active {
+    transition: all $nav-content-fade-in-delay ease;
+  }
+
+  &-leave-active {
+    transition: all 0.3s ease $nav-content-fade-out-delay;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.modal {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.3s ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translate(0, 5%);
+    opacity: 0;
+  }
+}
+
+.slide-up {
+  &-enter-active {
+    transition: all 0.5s 0.5s ease;
+  }
+
+  &-leave-active {
+    transition: all 0.25s ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translate(0, 20%);
+    opacity: 0;
+  }
+}
+
+.stagger-up {
+  &-enter-active {
+    transition: all 1.5s $easing-cubic;
+  }
+
+  @for $i from 1 to 20 {
+    &-enter-active:nth-child(#{$i}) {
+      transition-delay: $i * 0.2s;
+    }
+  }
+
+  &-enter {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+}
+
+.slide-right {
+  &-enter-active {
+    transition: transform 2.5s $easing-cubic;
+  }
+
+  &-enter {
+    transform: translateX(-50vw);
+  }
+}
+
+.overlay {
+  &-enter-active,
+  &-leave-active {
+    transition: $transition-overlay-background 0s;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.tile-list {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}

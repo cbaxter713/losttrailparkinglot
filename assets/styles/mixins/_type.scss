@@ -1,0 +1,91 @@
+@mixin headings ($weight:normal) {
+  margin-bottom: 1.5rem;
+  font-family: $font-family-headings;
+  letter-spacing: $letter-spacing-base;
+  line-height: $line-height-headings;
+}
+
+@mixin displayHeadings () {
+  @include headings;
+}
+
+@mixin subheadings() {
+  @include headings;
+
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+@mixin display-1 {
+  @include displayHeadings;
+
+  font-size: 5vw;
+
+  @media (orientation: portrait) {
+    font-size: 11.75vw;
+
+    @media (min-width: $screen-xs) {
+      font-size: 9.4vw;
+    }
+  }
+
+  @media (orientation: landscape) and (max-width: $screen-md) {
+    font-size: 6.5vw;
+  }
+}
+
+@mixin display-2 {
+  @include displayHeadings;
+
+  font-size: 4.4444vw;
+
+  @media (orientation: portrait) {
+    font-size: 9.23vw;
+  }
+}
+
+@mixin display-3 {
+  @include displayHeadings;
+
+  font-size: 3.88888vw;
+
+  @media (orientation: portrait) {
+    font-size: 8.2vw;
+  }
+}
+
+@mixin subhead-100 {
+  @include subheadings;
+
+  font-size: $font-size-200;
+}
+
+@mixin subhead-150 {
+  @include subheadings;
+
+  font-size: $font-size-300;
+}
+
+@mixin subhead-200 {
+  @include subheadings;
+
+  font-size: $font-size-300;
+}
+
+@mixin p-base {
+  margin-bottom: $spacing-100;
+  font-size: $font-size-100;
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-base;
+}
+
+@mixin base-type {
+  font-family: $font-family-sans-serif;
+}
+
+@mixin inputLabel {
+  padding-bottom: $spacing-50;
+  font-family: $font-family-serif;
+  font-size: $font-size-50;
+  text-transform: none;
+}

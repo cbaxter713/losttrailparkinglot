@@ -1,0 +1,234 @@
+$overflow-offset: calc((100vw - #{$container-width}) / 2);
+$overflow-offset-with-gutter: calc((100vw - (#{$container-width} - #{$gutter * 2})) / 2);
+
+@mixin customScrollbar {
+  ::-webkit-scrollbar {
+    height: $spacing-50;
+
+    @media (min-width: $navigation-breakpoint) {
+      height: $spacing-75;
+    }
+  }
+
+  ::-webkit-scrollbar-button {
+    width: $gutter / 2;
+
+    @media (min-width: $screen-xl) {
+      width: calc(#{$overflow-offset-with-gutter} / 2);
+    }
+
+    @media (min-width: $container-breakpoint) {
+      width: calc(#{$overflow-offset} / 2);
+    }
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    display: block;
+    border-radius: 50px;
+    background: $color-gray-200;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-image: unset;
+  }
+
+  .light-scroller ::-webkit-scrollbar-thumb {
+    background: $color-white;
+  }
+
+  .light-scrollbar ::-webkit-scrollbar-track,
+  .slim ::-webkit-scrollbar-track {
+    background-image: unset;
+  }
+}
+
+@mixin fullContainerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &.lazy-image.fade-image.img-loaded {
+    opacity: $image-opacity;
+  }
+}
+
+@mixin rawList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin verticalHeaderTransform($translateOffset, $translateBase: -100vw) {
+  transform: rotate(-90deg) translateY(calc(#{$translateBase} + #{$translateOffset}));
+}
+
+@mixin verticalHeader($translateOffset) {
+  @include verticalHeaderTransform($translateOffset);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  transform-origin: right top;
+  font-size: unset;
+  text-align: right;
+
+  & > * {
+    display: block;
+    margin: 0 0 0 auto;
+    padding: $spacing-100 0;
+    font-size: $spacing-75;
+    letter-spacing: $letter-spacing-1;
+    text-transform: uppercase;
+
+    @media (min-width: $navigation-breakpoint) {
+      font-size: $font-size-100;
+    }
+  }
+}
+
+@mixin iframe-embed() {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin zr-accordion-styles() {
+  .base-accordion {
+    /deep/ {
+      .accordion-item + .accordion-item {
+        .accordion-header {
+          border-bottom: none;
+        }
+      }
+
+      .accordion-item:last-child .accordion-header {
+        border-bottom: 1px solid $color-gray-300;
+      }
+
+      .accordion-header {
+        padding: $spacing-125 $spacing-250 $spacing-125 0;
+        border-color: $color-gray-300;
+        line-height: 1.2;
+        text-transform: capitalize;
+      }
+
+      .accordion-indicator {
+        &:before,
+        &:after {
+          background-color: $color-gray-900;
+          right: 8px;
+        }
+      }
+    }
+
+    &.header {
+      /deep/ {
+        .accordion-header {
+          padding: $spacing-150 0;
+          font-size: $font-size-250;
+        }
+
+        .accordion-indicator {
+          &::before,
+          &::after {
+            width: 0.86em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin headerStyle {
+  padding: $spacing-100 0;
+  position: relative;
+  width: 100%;
+  height: $header-height-sm;
+  z-index: $z-index-level-header;
+
+  @media (min-width: $navigation-breakpoint) {
+    height: $header-height;
+  }
+}
+
+@mixin fancyTitle($size: 'large') {
+  position: relative;
+  margin-bottom: $spacing-150;
+  padding-bottom: calc(#{$spacing-150} + 6px);
+
+  @if $size == 'small' {
+    margin-bottom: $spacing-100;
+    padding-bottom: calc(#{$spacing-100} + 3px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3.75rem;
+    height: 6px;
+    background-color: $color-primary;
+    border-radius: 2px;
+
+    @if $size == 'small' {
+      width: 30px;
+      height: 3px;
+    }
+
+  }
+}
+
+@mixin fancyTitleSmall() {
+  @include fancyTitle;
+
+  padding-bottom: calc(#{$spacing-100} + 3px);
+
+  &::after {
+    width: 1.875rem;
+    height: 3px;
+  }
+}
+
+@mixin mastheadTextLink() {
+  @media (min-width: $navigation-breakpoint) {
+    font-family: $font-family-condensed;
+    font-size: $font-size-125;
+    line-height: 1;
+    color: $color-white;
+    transition: color $transition-base;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    .masthead-text-reversed & {
+      color: $base-type-color;
+    }
+  }
+}
+
+@mixin navListHeader() {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-family: $font-family-headings;
+  font-size: $font-size-150;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: none;
+  transition: color $transition-base;
+}

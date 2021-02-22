@@ -1,0 +1,13 @@
+// Easing
+$easing-cubic: cubic-bezier(0.165, 0.84, 0.44, 1);
+$hero-content-ease: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+// Durations
+$duration-route-loading: 0.7s;
+
+// Transitions
+$transition-base: 0.25s ease-out;
+$transition-nav-content: 0.5s ease;
+$transition-image-hover: transform 3s $easing-cubic;
+$transition-overlay-background: opacity 0.4s ease-out;
+$transition-route-loading: all $duration-route-loading $easing-cubic;

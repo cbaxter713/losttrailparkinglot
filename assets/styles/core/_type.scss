@@ -1,0 +1,126 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1, .heading-1,
+h2, .heading-2,
+h3, .heading-3,
+h4, .heading-4,
+h5, .heading-5,
+h6, .heading-6 {
+  @include headings;
+}
+
+
+h1, .heading-1 {
+  font-size: $font-size-300;
+
+  @media (min-width: $screen-sm) {
+    font-size: $font-size-600;
+  }
+}
+
+h2, .heading-2 {
+  font-size: $font-size-250;
+
+  @media (min-width: $screen-sm) {
+    font-size: $font-size-400;
+  }
+}
+
+h3, .heading-3 {
+  font-size: $font-size-200;
+
+  @media (min-width: $screen-sm) {
+    font-size: $font-size-300;
+  }
+}
+
+h4, .heading-4 {
+  font-size: $font-size-150;
+}
+
+h5, .heading-5 {
+  margin-bottom: $spacing-100;
+  font-size: $font-size-150;
+}
+
+h6, .heading-6 {
+  margin-bottom: $spacing-100;
+  font-size: $font-size-50;
+
+  @media (min-width: $screen-sm) {
+    font-size: $font-size-100;
+  }
+}
+
+.subheading-100,
+.subheading-150,
+.subheading-200,
+.subheading-300 {
+  @include subheadings;
+
+  &.subheading-gray {
+    color: $color-gray-500;
+  }
+}
+
+.subheading-75 {
+  font-size: $font-size-100;
+}
+
+.subheading-100 {
+  font-size: $font-size-200;
+}
+
+.subheading-150 {
+  font-size: $font-size-300;
+}
+
+.subheading-200 {
+  font-size: $font-size-300;
+}
+
+p {
+  @include p-base;
+
+  &.small {
+    font-size: $font-size-75;
+  }
+
+  &.large {
+    font-size: $font-size-150;
+  }
+}
+
+.small > p {
+  font-size: $font-size-75;
+}
+
+.large > p {
+  font-size: $font-size-150;
+}
+
+
+a {
+  color: $oboz-green-accessible-dark;
+  text-decoration: underline;
+
+  &:hover {
+    color: $oboz-green-accessible;
+  }
+}
+
+.display-1 {
+  @include display-1;
+}
+
+.display-2 {
+  @include display-2;
+}
+
+.display-3 {
+  @include display-3;
+}

@@ -1,0 +1,17 @@
+@import "./colors";
+@import "./spacing";
+
+$input-border-width: 2px;
+$input-border-radius: 2px;
+$input-padding-sm:  0.25em 0.5em;
+$input-padding: 0.5em 1em;
+$input-padding-lg: 0.75em 1.5em;
+$input-font-size: $font-size-100;
+
+$input-toggle-height: 1.875rem;
+
+$input-height-100: $spacing-350;
+
+$input-default-width: 15rem;
+$input-spacing: $spacing-100;
+$input-spacing-lg: $spacing-200;

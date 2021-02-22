@@ -1,0 +1,49 @@
+$z-index-gap: 100;
+$z-index-level-below-page: 100;
+$z-index-level-page: $z-index-level-below-page + $z-index-gap;
+$z-index-level-footer: $z-index-level-page + $z-index-gap;
+$z-index-level-header: $z-index-level-footer + $z-index-gap;
+$z-index-level-sidebar: $z-index-level-header + $z-index-gap;
+$z-index-level-modal: $z-index-level-sidebar + $z-index-gap;
+$z-index-level-loading: $z-index-level-modal + $z-index-gap;
+$z-index-level-super: $z-index-level-modal + $z-index-gap;
+
+//Create Z-index map here, by page section
+//Below Page
+
+
+
+//Page
+$main-page-z-index: $z-index-level-page;
+$page-top-gradient-z-index: $main-page-z-index + 10;
+$below-masthead-content-z-index: $page-top-gradient-z-index + 1;
+$prismic-edit-z-index:$z-index-level-modal + 1;
+
+$slices-z-index: $main-page-z-index;
+$story-breadcrumb-z-index: $main-page-z-index + 1;
+$slice-images-z-index: $story-breadcrumb-z-index + 1;
+$sticky-nav-z-index: $story-breadcrumb-z-index + 100;
+
+
+  //Footer
+$footer-z-index: $z-index-level-footer;
+
+
+
+//Header
+$header-z-index: $z-index-level-header;
+$skip-link-z-index: $header-z-index + $z-index-gap;
+$compare-z-index: $header-z-index + 1;
+$compare-trigger-z-index: $header-z-index - 1;
+
+//Sidebar
+
+
+//Modal
+
+
+//Super
+$cookie-banner-z-index: $z-index-level-super;
+$route-loading-z-index: $z-index-level-super + 1;
+
+//Cookie Banner

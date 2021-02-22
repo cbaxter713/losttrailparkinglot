@@ -1,0 +1,39 @@
+//Standard Breakpoints
+$screen-xs: 540px;
+$screen-sm: 768px;
+$screen-md: 980px;
+$screen-lg: 1150px;
+$screen-xl: 1400px;
+$screen-xxl: 1600px;
+
+$screen-xs-max: $screen-sm - 1;
+$screen-sm-max: $screen-md - 1;
+$screen-md-max: $screen-lg - 1;
+$screen-lg-max: $screen-xl - 1;
+
+$screen-sm-min: $screen-xs + 1;
+$screen-md-min: $screen-sm + 1;
+$screen-lg-min: $screen-md + 1;
+$screen-xl-min: $screen-lg + 1;
+
+//Custom Breakpoints
+$navigation-breakpoint: 1200px;
+$navigation-breakpoint-max: $navigation-breakpoint - 1;
+
+$cart-breakpoint: 900px;
+$cart-breakpoint-large: 1380px;
+
+$container-breakpoint: 1472px;
+
+$blog-landing-breakpoint: $screen-sm;
+$related-stories-breakpoint: $screen-md;
+
+$collection-carousel-breakpoint: $screen-md;
+$collection-carousel-breakpoint-max: $collection-carousel-breakpoint - 1;
+
+$compare-breakpoint: $screen-md;
+
+$customer-service-breakpoint: $screen-sm;
+$customer-service-breakpoint-max: $customer-service-breakpoint - 1;
+
+$shoe-finder-breakpoint: $navigation-breakpoint;

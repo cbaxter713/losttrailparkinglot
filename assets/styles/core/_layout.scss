@@ -1,0 +1,18 @@
+html, body {
+  font-size: $font-size-100;
+  background-color: $base-type-color;
+  color: $base-type-color;
+  line-height: $line-height-base;
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
+}
+
+body {
+  &.scroll-lock {
+    overflow: hidden;
+  }
+}
+
+main {
+  width: 100%;
+}

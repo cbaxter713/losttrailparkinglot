@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .home-page {
   background-color: #000;
   color: white;
@@ -64,10 +64,8 @@ export default {
   font-size: 20vw;
   font-weight: 600;
   line-height: 1;
-}
 
-@media (min-width: 900px) {
-  .title {
+  @media (min-width: 900px) {
     font-size: 200px;
   }
 }

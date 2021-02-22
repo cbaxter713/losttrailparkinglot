@@ -1,0 +1,41 @@
+//Base Spacing
+$spacing-12: 0.125rem; // 2px
+$spacing-25: .25rem;   // 4px
+$spacing-50: .5rem;    // 8px
+$spacing-75: 0.75rem;  // 12px
+$spacing-100: 1rem;    // 16px
+$spacing-112: 1.125rem;// 18px
+$spacing-125: 1.25rem; // 20px
+$spacing-150: 1.5rem;  // 24px
+$spacing-175: 1.75rem; // 28px
+$spacing-200: 2rem;    // 32px
+$spacing-225: 2.25rem; // 36px
+$spacing-250: 2.5rem;  // 40px
+$spacing-300: 3rem;    // 48px
+$spacing-325: 3.25rem; // 52px
+$spacing-350: 3.5rem;  // 56px
+$spacing-400: 4rem;    // 64px
+$spacing-450: 4.5rem;  // 72px
+$spacing-475: 4.75rem; // 76px
+$spacing-500: 5rem;    // 80px
+$spacing-600: 6rem;    // 96px
+$spacing-700: 7rem;    // 112px
+$spacing-750: 7.5rem;  // 120px
+$spacing-800: 8rem;    // 128px
+$spacing-900: 9rem;    // 144px
+$spacing-1000: 10rem;  // 160px
+
+
+//Component Spacing
+$page-spacing-mobile: $spacing-200;
+$page-spacing-desktop: $spacing-400;
+$component-spacing: $spacing-700;
+$component-spacing-mobile: $spacing-500;
+$component-spacing-mobile-large: $spacing-700;
+$component-spacing-desktop: $spacing-700;
+$component-spacing-desktop-large: $spacing-900;
+
+
+//Misc
+$mobile-bottom-spacing: 100px;
+$title-left-spacing: $spacing-400;

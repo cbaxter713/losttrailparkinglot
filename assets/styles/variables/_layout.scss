@@ -1,0 +1,14 @@
+$gutter: 2.22vw;
+$gutter-mobile: 1.5rem;
+$container-gutter: $gutter * 2;
+$content-gutter: $container-gutter * 2;
+
+$container-width: 1440px;
+$content-width: 980px;
+$text-block-width: 680px;
+$form-width: 420px;
+
+$container-content-width: calc(100vw - #{$container-gutter * 2});
+$full-container-width: calc(#{$container-width} + #{$container-gutter * 2});
+$full-container-width-content: calc(#{$content-width} + #{$content-gutter * 2});
+$full-container-width-text: calc(#{$text-block-width} + #{$content-gutter * 2});

@@ -1,0 +1,75 @@
+
+@mixin formLabel {
+  margin-left: $spacing-100;
+  padding: 0;
+  color: $color-gray-600;
+  font-family: $font-family-condensed;
+  font-size: $font-size-75;
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+@mixin formInput {
+  height: $input-height-100;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+  background-color: $color-white;
+  font-size: $font-size-100;
+  line-height: 1;
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+
+  &[disabled] {
+    border-color: $color-gray-400;
+    color: $color-gray-400;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+@mixin formInputToggle {
+  padding-bottom: $spacing-150;
+
+  label {
+    @include formLabel;
+
+    display: flex;
+    align-items: center;
+    height: $input-toggle-height;
+    margin: 0;
+    padding-left: calc(#{$input-toggle-height} + #{$spacing-75});
+
+    &::before {
+      height: $input-toggle-height;
+      width: $input-toggle-height;
+      border-width: $input-border-width;
+      border-color: $input-border-color;
+      background-color: $color-white;
+    }
+  }
+
+  input {
+    &:focus + label,
+    &:active + label {
+      &::before {
+        border-color: $color-primary;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        border-color: $color-primary;
+      }
+    }
+  }
+}

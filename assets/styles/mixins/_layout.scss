@@ -1,0 +1,80 @@
+@mixin componentSpacing {
+  padding-top: $component-spacing-mobile;
+  padding-bottom: $component-spacing-mobile;
+
+  @media (min-width: $navigation-breakpoint) {
+    padding-top: $component-spacing-desktop;
+    padding-bottom: $component-spacing-desktop;
+  }
+}
+
+@mixin componentSpacingLarge {
+  padding-top: $component-spacing-mobile-large;
+  padding-bottom: $component-spacing-mobile-large;
+
+  @media (min-width: $navigation-breakpoint) {
+    padding-top: $component-spacing-desktop-large;
+    padding-bottom: $component-spacing-desktop-large;
+  }
+}
+
+@mixin pageSpacing {
+  padding: $page-spacing-mobile 0;
+
+  @media (min-width: $navigation-breakpoint) {
+    padding: $page-spacing-desktop 0;
+  }
+}
+
+@mixin containerLayout {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 $gutter-mobile;
+
+  @media (min-width: $navigation-breakpoint) {
+    padding: 0 $container-gutter;
+  }
+
+  &.content-width {
+    @media (min-width: $navigation-breakpoint) {
+      padding: 0 $content-gutter;
+    }
+  }
+
+  &.text-block-width {
+    max-width: calc(#{$text-block-width} + #{$gutter-mobile * 2});
+
+    @media (min-width: $navigation-breakpoint) {
+      max-width: calc(#{$text-block-width} + (#{$container-gutter} * 2));
+    }
+  }
+}
+
+@mixin fullViewportHeightMinusMasthead {
+  height: calc(100vh - #{$header-height-sm});
+
+  @media (min-width: $navigation-breakpoint) {
+    height: calc(100vh - #{$header-height});
+  }
+}
+
+@mixin two-column-text {
+  @media (min-width: $screen-sm) {
+    padding: 0 $gutter;
+    column-gap: $gutter*4;
+    column-count: 2;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0 $gutter*2;
+  }
+}
+
+@mixin absoluteAndFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
