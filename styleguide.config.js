@@ -8,21 +8,21 @@ module.exports = {
     path.join(__dirname, '/styleguide/utils/dependencies.js'),
     path.join(__dirname, '/styleguide/utils/dummyData.js'),
     path.join(__dirname, '/styleguide/theme/script.js'),
-    path.join(__dirname, '/styleguide/theme/styles.scss')
+    path.join(__dirname, '/styleguide/theme/styles.scss'),
   ],
   theme: {
     maxWidth: '100%',
     sidebarWidth: 300,
     color: {
       base: '#1e1f22',
-      link: '#30a80b',
-      linkHover: '#228801',
-      linkFocus: '#228801'
+      link: '#348658',
+      linkHover: '#5ca93e',
+      linkFocus: '#01882e',
     },
     buttonTextTransform: 'uppercase',
     fontFamily: {
-      base: 'Flama-Book'
-    }
+      base: 'monaco',
+    },
   },
   pagePerSection: true,
   usageMode: 'expand',
@@ -41,48 +41,48 @@ module.exports = {
         'styleguide/components/SgType.vue',
         'styleguide/components/SgSpacing.vue',
         'styleguide/components/SgInputs.vue',
-        'styleguide/components/SgCTAS.vue'
+        'styleguide/components/SgCTAS.vue',
       ],
       sectionDepth: 1,
       exampleMode: 'hide',
-      usageMode: 'hide'
+      usageMode: 'hide',
     },
     {
       name: 'Base Components',
       content: 'styleguide/docs/base-components.md',
       components: 'components/base/**/*.vue',
-      sectionDepth: 2
+      sectionDepth: 2,
+    },
+    {
+      name: 'Blocks',
+      components: 'components/blocks/**/*.vue',
+      sectionDepth: 2,
     },
     {
       name: 'Layout Components',
       components: 'components/layout/**/*.vue',
-      sectionDepth: 2
+      sectionDepth: 2,
     },
     {
       name: 'Patterns',
       components: 'components/patterns/**/*.vue',
-      sectionDepth: 2
+      sectionDepth: 2,
     },
-    {
-      name: 'Slice Components',
-      components: 'components/slices/**/*.vue',
-      sectionDepth: 2
-    }
   ],
   webpackConfig: {
     resolve: {
-      extensions: ['*', '.js', '.vue', '.json']
+      extensions: ['*', '.js', '.vue', '.json'],
     },
     module: {
       rules: [
         {
           test: /\.vue$/,
-          loader: 'vue-loader'
+          loader: 'vue-loader',
         },
         {
           test: /\.js?$/,
           exclude: /node_modules/,
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         },
         {
           test: /\.(css?|scss)(\?.*)?$/,
@@ -93,13 +93,12 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 data: '@import "./assets/styles/imports.scss";',
-                outputStyle: 'compressed'
-              }
-            }
-          ]
-        }
-      ]
+              },
+            },
+          ],
+        },
+      ],
     },
-    plugins: [new VueLoaderPlugin()]
-  }
+    plugins: [new VueLoaderPlugin()],
+  },
 };

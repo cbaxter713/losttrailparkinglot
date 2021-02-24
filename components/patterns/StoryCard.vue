@@ -6,7 +6,6 @@
       @mouseleave.native="hovered = false"
     >
       <div class="story-image-wrapper">
-        <oboz-o-icon class="default-icon" />
         <image-hover
           class="story-card-image"
           :mobile-img="image"
@@ -25,11 +24,10 @@
 <script>
 import Theme from './Theme';
 import ImageHover from '../motion/ImageHover';
-import ObozOIcon from '../utility/ObozOIcon';
 
 export default {
   name: 'StoryCard',
-  components: {ObozOIcon, ImageHover, Theme},
+  components: {ImageHover, Theme},
   data() {
     return {
       hovered: false,
