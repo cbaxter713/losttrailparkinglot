@@ -7,8 +7,8 @@
       {
         'hover-link': hoverLink,
         hovered: hovered,
-        reversed: reversed
-      }
+        reversed: reversed,
+      },
     ]"
     v-bind="$props"
     :aria-label="ctaAriaLabel"
@@ -40,7 +40,7 @@ export default {
       }
 
       return 'div';
-    }
+    },
   },
   props: {
     /**
@@ -48,21 +48,21 @@ export default {
      */
     hoverLink: {
       type: Boolean,
-      default: true
+      default: true,
     },
     /**
      * If triggering the hover state from a parent. Set to true to trigger the hover state
      */
     hovered: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Should render the component as a button
      */
     button: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Font size, which affects underline size, and spacing as well
@@ -76,22 +76,22 @@ export default {
     size: {
       type: String,
       default: '100',
-      validator: function(value) {
+      validator: function (value) {
         return ['50', '75', '100', '200', '300', '400'].includes(value);
-      }
+      },
     },
     icon: {
       type: String,
-      default: 'arrow-right'
+      default: 'arrow-right',
     },
     reversed: {
       type: Boolean,
-      default: false
+      default: false,
     },
     ctaAriaLabel: {
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 
@@ -157,7 +157,7 @@ $arrow-spacing: $spacing-100;
   align-items: center;
   justify-content: center;
   margin-left: $arrow-spacing;
-  background-color: $oboz-green-accessible;
+  background-color: $color-primary;
   border-radius: 50%;
   box-shadow: 0 2px 1rem 0 rgba($color-black, 0.25);
 

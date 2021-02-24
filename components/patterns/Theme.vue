@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import {themeProps} from '../../mixins/sharedProps';
+import {themeProps} from '@/mixins/sharedProps';
 
 export default {
   name: 'Theme',
-  mixins: [themeProps]
+  mixins: [themeProps],
 };
 </script>
 
@@ -58,11 +58,11 @@ export default {
   }
 
   a {
-    color: $oboz-green;
+    color: $color-primary;
     text-decoration: underline;
 
     &:hover {
-      color: $oboz-green-accessible;
+      color: $color-primary;
     }
   }
 }

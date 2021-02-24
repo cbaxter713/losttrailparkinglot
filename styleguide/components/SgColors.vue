@@ -31,7 +31,7 @@
 
 <script>
 /**
- * Color Palette of the Oboz Footwear site.
+ * Color Palette of the site.
  */
 
 export default {
@@ -41,79 +41,79 @@ export default {
       return [
         {
           name: 'color-primary',
-          hex: '#62bb46'
+          hex: '#62bb46',
         },
         {
           name: 'color-primary-dark',
-          hex: '#228801'
+          hex: '#228801',
         },
         {
           name: 'color-primary-light',
-          hex: '#30a80b'
+          hex: '#30a80b',
         },
         {
           name: 'color-error',
-          hex: '#bc2900'
+          hex: '#bc2900',
         },
         {
           name: 'color-error-negative',
-          hex: '#ff3800'
-        }
+          hex: '#ff3800',
+        },
       ];
     },
     grays() {
       return [
         {
           name: 'color-gray-1000',
-          hex: '#000104'
+          hex: '#000104',
         },
         {
           name: 'color-gray-900',
-          hex: '#0f0f10'
+          hex: '#0f0f10',
         },
         {
           name: 'color-gray-800',
-          hex: '#1e1f22'
+          hex: '#1e1f22',
         },
         {
           name: 'color-gray-700',
-          hex: '#3e3e41'
+          hex: '#3e3e41',
         },
         {
           name: 'color-gray-600',
-          hex: '#5c5d5f'
+          hex: '#5c5d5f',
         },
         {
           name: 'color-gray-500',
-          hex: '#747576'
+          hex: '#747576',
         },
         {
           name: 'color-gray-400',
-          hex: '#999a9b'
+          hex: '#999a9b',
         },
         {
           name: 'color-gray-300',
-          hex: '#b8b8b9'
+          hex: '#b8b8b9',
         },
         {
           name: 'color-gray-200',
-          hex: '#d7d7d7'
+          hex: '#d7d7d7',
         },
         {
           name: 'color-gray-100',
-          hex: '#f5f5f5'
-        }
+          hex: '#f5f5f5',
+        },
       ];
     },
     warnings() {
       return [
         {
           name: 'color-warning',
-          hex: '#bc2900'
-        }
+          hex: '#bc2900',
+        },
       ];
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,11 +1,7 @@
 // Theme Colors
-$color-primary: #62bb46;
-$color-primary-light: #30a80b;
-$color-primary-dark: #228801;
-
-$oboz-green: $color-primary;
-$oboz-green-accessible: $color-primary-light;
-$oboz-green-accessible-dark: $color-primary-dark;
+$color-primary: #ff00de;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
 
 $color-error: #bc2900;
 $color-error-negative: #ff3800;
