@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import {mapGetters} from 'vuex';
 import {routes} from '@/utils/routeMapping';
 
 if (!Vue.__global_mixin__) {
@@ -6,13 +7,18 @@ if (!Vue.__global_mixin__) {
   Vue.mixin({
     data() {
       return {
-        htmlTagPattern: /<\/?[^>]+(>|$)/g
+        htmlTagPattern: /<\/?[^>]+(>|$)/g,
       };
     },
     computed: {
+      ...mapGetters({
+        cmsLabel: 'cmsLabelByKey',
+        settings: 'settings',
+        isMobile: 'isMobile',
+      }),
       routes() {
         return routes;
-      }
+      },
     },
     methods: {
       pluralize(value, text) {
@@ -42,7 +48,7 @@ if (!Vue.__global_mixin__) {
         return {
           url: this.cmsLinkToUrl(linkObj),
           external: this.isCmsLinkExternal(linkObj),
-          target: this.cmsLinkToTarget(linkObj)
+          target: this.cmsLinkToTarget(linkObj),
         };
       },
       cmsLinkExists(linkObj) {
@@ -76,7 +82,7 @@ if (!Vue.__global_mixin__) {
     filters: {
       reverse(items) {
         return items.slice().reverse();
-      }
-    }
+      },
+    },
   });
 }

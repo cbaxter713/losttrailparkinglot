@@ -129,7 +129,12 @@ export default {
   css: [{src: '~assets/styles/global.scss', lang: 'scss'}],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~plugins/globalHelpersMixin', '~/plugins/datocms-image'],
+  plugins: [
+    '~plugins/globalHelpersMixin',
+    '~/plugins/datocms-image',
+    '~plugins/mediaQueries',
+    '~plugins/directives',
+  ],
 
   router: {
     middleware: ['routeDetection'],
@@ -139,7 +144,14 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/gtm'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
+    ['@nuxtjs/pwa', {icon: false, manifest: false}],
+    '@nuxtjs/gtm',
+    'portal-vue/nuxt',
+    ['vue-scrollto/nuxt', {duration: 600, offset: 0}],
+  ],
 
   styleResources: {
     scss: ['@/assets/styles/variables/variables.scss', '@/assets/styles/mixins/mixins.scss'],
@@ -160,5 +172,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['gsap'],
+  },
 };

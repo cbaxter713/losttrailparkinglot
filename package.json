@@ -1,5 +1,5 @@
 {
-  "name": "losttrailparkinglot",
+  "name": "LostTrailParkingLot",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,13 +7,18 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "npm rebuild node-sass && nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
-    "lint": "yarn lint:js && yarn lint:style"
+    "clean": "rm -rf .nuxt && rm -rf node_modules",
+    "styleguide": "vue-styleguidist server --open --config styleguide.config.js",
+    "build:styleguide": "vue-styleguidist build --config styleguide.config.js",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "lint:stylelint": "stylelint --fix",
+    "lint:prettier": "prettier --write --loglevel warn"
   },
-  "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run lint"
+    }
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
@@ -21,13 +26,27 @@
     "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@zaneray/vue-components": "2.1.14",
     "core-js": "^3.8.3",
+    "focus-visible": "^5.0.2",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
+    "gsap": "^3.5.1",
+    "lodash": "^4.17.20",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.12",
+    "portal-vue": "^2.1.7",
     "sass-loader": "^10.1.1",
-    "vue-datocms": "^0.2.3"
+    "vue-datocms": "^0.2.3",
+    "v-click-outside": "^3.0.0",
+    "vue-announcer": "^1.0.6",
+    "vue-focus-lock": "^1.4.0",
+    "vue-mq": "^1.0.1",
+    "vue-roller": "^1.12.4",
+    "vue-scrollto": "^2.17.1",
+    "vue-slide-up-down": "^2.0.1",
+    "vue-slick-carousel": "^1.0.6",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -39,10 +58,18 @@
     "eslint-plugin-vue": "^7.5.0",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
+    "pretty-quick": "^2.0.1",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
-    "stylelint-scss": "^3.5.4"
+    "stylelint-scss": "^3.5.4",
+    "vue-eslint-parser": "^7.0.0",
+    "vue-loader": "^15.9.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-styleguidist": "^4.33.7",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.43.0",
+    "webpack-merge": "^4.2.2"
   }
 }
