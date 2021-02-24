@@ -11,9 +11,9 @@
           <h5 class="tracked status-code">404</h5>
           <h1 class="title">How the hell did you even get here?</h1>
           <h3 class="error-message">{{ error.message }}</h3>
-          <base-button size="200" :link-path="routes.home()" :external-link="true">
+          <base-cta-link size="200" :url="routes.home()" :external-link="false">
             Back To the Lot
-          </base-button>
+          </base-cta-link>
         </div>
       </theme>
     </div>
@@ -24,11 +24,12 @@
 import Theme from '../components/patterns/Theme';
 import BaseButton from '../components/base/BaseButton';
 import BaseImage from '@/components/base/BaseImage';
+import BaseCtaLink from '@/components/base/BaseCtaLink';
 
 export default {
   name: 'error',
   layout: 'static',
-  components: {BaseImage, BaseButton, Theme},
+  components: {BaseCtaLink, BaseImage, BaseButton, Theme},
   transition: {
     name: 'page',
     mode: 'out-in',

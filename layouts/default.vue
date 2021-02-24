@@ -11,6 +11,7 @@
     >
       Skip to Main Content
     </a>
+    <app-masthead />
     <main :id="mainContentId" class="app-main" :aria-hidden="stringBoolean(navActive)">
       <nuxt />
     </main>

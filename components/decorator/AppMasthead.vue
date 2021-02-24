@@ -1,10 +1,10 @@
 <template>
-  <footer class="app-footer"></footer>
+  <header></header>
 </template>
 
 <script>
 export default {
-  name: 'AppFooter',
+  name: 'AppMasthead',
 };
 </script>
 

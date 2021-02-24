@@ -9,26 +9,26 @@ import {mapGetters} from 'vuex';
 export const pageMeta = {
   transition: {
     name: 'page',
-    mode: 'out-in'
+    mode: 'out-in',
   },
   head() {
     return {
       title: this.seoTitle,
       meta: this.metaFields,
-      script: this.scripts
+      script: this.scripts,
     };
   },
   data() {
     return {
       // Default setup of pageData object.  This should be overwritten by the pages own pageData object
       pageData: {},
-      document: {}
+      document: {},
     };
   },
   computed: {
     ...mapGetters({
       companyName: 'companyName',
-      baseUrl: 'baseUrl'
+      baseUrl: 'baseUrl',
     }),
     seoUrl() {
       return `${this.baseUrl}${this.$route.fullPath}`;
@@ -60,16 +60,17 @@ export const pageMeta = {
       return "Oboz designs and builds men’s and women's hiking boots, hiking shoes, insulated footwear, sandals and more from the ground up for wherever the trail takes you.";
     },
     seoImage() {
-      if (this.pageData.meta_image && this.pageData.meta_image.url) {
-        return this.pageData.meta_image.url;
-      } else if (this.pageData.hero_image && this.pageData.hero_image.url) {
-        return this.pageData.hero_image.url;
-      } else if (
-        this.$store.getters.settings &&
-        this.$store.getters.settings.page_meta_image_default.url
-      ) {
-        return this.$store.getters.settings.page_meta_image_default.url;
-      }
+      // TODO: setup standard meta image
+      // if (this.pageData.meta_image && this.pageData.meta_image.url) {
+      //   return this.pageData.meta_image.url;
+      // } else if (this.pageData.hero_image && this.pageData.hero_image.url) {
+      //   return this.pageData.hero_image.url;
+      // } else if (
+      //   this.$store.getters.settings &&
+      //   this.$store.getters.settings.page_meta_image_default.url
+      // ) {
+      //   return this.$store.getters.settings.page_meta_image_default.url;
+      // }
 
       return false;
     },
@@ -88,7 +89,7 @@ export const pageMeta = {
       metaArray.push({
         hid: 'twitter:description',
         name: 'twitter:description',
-        value: this.seoDesc
+        value: this.seoDesc,
       });
       metaArray.push({hid: 'og:url', property: 'og:url', content: this.seoUrl});
       metaArray.push({hid: 'og:title', property: 'og:title', content: this.seoTitle});
@@ -107,7 +108,7 @@ export const pageMeta = {
         metaArray.push({
           hid: 'article:author',
           name: 'article:author',
-          content: this.pageData.author_name
+          content: this.pageData.author_name,
         });
       }
 
@@ -115,7 +116,7 @@ export const pageMeta = {
         metaArray.push({
           hid: 'article:published_time',
           name: 'article:published_time',
-          content: this.publicationDate
+          content: this.publicationDate,
         });
       }
 
@@ -128,8 +129,8 @@ export const pageMeta = {
         brand: this.companyName,
         offers: {
           '@type': 'Offer',
-          url: `${this.baseUrl}${this.$route.fullPath}`
-        }
+          url: `${this.baseUrl}${this.$route.fullPath}`,
+        },
       };
 
       if (this.productData.name) {
@@ -177,24 +178,24 @@ export const pageMeta = {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
             opens: '08:00',
-            closes: '17:30'
+            closes: '17:30',
           },
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Friday'],
             opens: '08:00',
-            closes: '14:00'
-          }
+            closes: '14:00',
+          },
         ],
         logo: `${this.baseUrl}/icons/android-chrome-192x192.png`,
         address: {
           '@type': 'PostalAddress',
-          addressCountry: 'USA'
+          addressCountry: 'USA',
         },
         contactPoint: {
           '@type': 'ContactPoint',
-          contactType: 'General Inquires'
-        }
+          contactType: 'General Inquires',
+        },
       };
 
       if (this.organizationData) {
@@ -234,18 +235,18 @@ export const pageMeta = {
       if (this.productData) {
         scriptArray.push({
           innerHTML: JSON.stringify(this.productSchemaObject),
-          type: 'application/ld+json'
+          type: 'application/ld+json',
         });
       }
       if (this.organizationData) {
         scriptArray.push({
           innerHTML: JSON.stringify(this.organizationSchemaObject),
-          type: 'application/ld+json'
+          type: 'application/ld+json',
         });
       }
 
       return scriptArray;
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('setRoutingState', false);
@@ -256,12 +257,12 @@ export const pageMeta = {
           route: this.$route.fullPath,
           title: this.seoTitle,
           description: this.seoDesc,
-          image: this.seoImage
-        }
+          image: this.seoImage,
+        },
       },
-      nonInteractive: true
+      nonInteractive: true,
     });
 
     this.$announcer.set(`Navigated to ${this.seoTitle}`);
-  }
+  },
 };

@@ -20,23 +20,23 @@ export default {
      */
     url: {
       type: String,
-      default: ''
+      default: '',
     },
     /**
      * Object that represents a link from a headless CMS.  Currently setup for Prismic
      */
     cmsLink: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
-      }
+      },
     },
     /**
      * Whether or not the link is external
      */
     external: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /**
      * Link target to follow for external links
@@ -44,10 +44,10 @@ export default {
     target: {
       type: String,
       default: '_blank',
-      validator: function(value) {
+      validator: function (value) {
         return ['_blank', '_self'].includes(value);
-      }
-    }
+      },
+    },
   },
   computed: {
     hasCmsLink() {
@@ -58,13 +58,14 @@ export default {
     },
     finalLinkPath() {
       const linkPath = this.cmsLink.url || this.url;
+      // TODO: localize links here if ever needed
       // Only return localePath version if using localized content from nuxt-i18n module
-      return this.finalExternal ? linkPath : this.localePath(linkPath);
+      return this.finalExternal ? linkPath : linkPath;
     },
     finalTarget() {
       return this.cmsLink.target || this.target;
-    }
-  }
+    },
+  },
 };
 </script>
 
