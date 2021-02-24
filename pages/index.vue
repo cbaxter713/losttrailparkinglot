@@ -62,7 +62,7 @@ export default {
 
 .title {
   margin: 0;
-  max-width: 8ex;
+  max-width: 9ex;
   font-size: 20vw;
   font-weight: 600;
   line-height: 1;

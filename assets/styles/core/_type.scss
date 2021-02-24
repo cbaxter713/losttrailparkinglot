@@ -105,11 +105,11 @@ p {
 
 
 a {
-  color: $oboz-green-accessible-dark;
+  color: $color-primary-dark;
   text-decoration: underline;
 
   &:hover {
-    color: $oboz-green-accessible;
+    color: $color-primary;
   }
 }
 

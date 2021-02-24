@@ -11,11 +11,12 @@
     >
       Skip to Main Content
     </a>
-    <app-masthead />
+    <app-masthead class="app-masthead" />
+    <app-navigation class="app-navigation" />
     <main :id="mainContentId" class="app-main" :aria-hidden="stringBoolean(navActive)">
       <nuxt />
     </main>
-    <app-footer />
+    <app-footer class="app-footer" />
     <portal-target name="modalPortal" multiple />
     <icon-definitions />
   </div>
@@ -27,10 +28,14 @@ import {mapGetters} from 'vuex';
 import {breakpointArray} from '../plugins/mediaQueries';
 import AppFooter from '../components/decorator/AppFooter.vue';
 import IconDefinitions from '../components/utility/IconDefinitions';
+import AppNavigation from '@/components/decorator/AppNavigation';
+import AppMasthead from '@/components/decorator/AppMasthead';
 
 export default {
   name: 'BaseLayout',
   components: {
+    AppMasthead,
+    AppNavigation,
     IconDefinitions,
     AppFooter,
   },
@@ -163,6 +168,14 @@ export default {
       right: auto;
     }
   }
+}
+
+.app-masthead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $header-z-index;
 }
 
 main {

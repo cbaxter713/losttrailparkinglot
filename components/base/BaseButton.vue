@@ -28,7 +28,7 @@ export default {
   name: 'BaseButton',
   components: {
     BaseIcon,
-    ZrButton
+    ZrButton,
   },
   extends: ZrButton,
   props: {
@@ -36,19 +36,19 @@ export default {
      * Icon to display in the button.
      */
     icon: {
-      type: String
+      type: String,
     },
     animateIcon: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     // Only return localePath version if using localized content from nuxt-i18n module
     finalLinkPath() {
       return this.linkPath && !this.externalLink ? this.localePath(this.linkPath) : this.linkPath;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -131,10 +131,10 @@ $button-content-z-index: $button-hover-layer-z-index + 1;
 
   &.btn-primary,
   &.btn-action {
-    background-color: $oboz-green-accessible;
+    background-color: $color-primary;
 
     &::before {
-      background-color: darken($oboz-green-accessible, 3%);
+      background-color: darken($color-primary, 3%);
     }
 
     .btn-icon /deep/ {

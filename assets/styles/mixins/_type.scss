@@ -3,6 +3,7 @@
   font-family: $font-family-headings;
   letter-spacing: $letter-spacing-base;
   line-height: $line-height-headings;
+  text-transform: uppercase;
 }
 
 @mixin displayHeadings () {
