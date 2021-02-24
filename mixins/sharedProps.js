@@ -7,5 +7,9 @@ export const themeProps = {
         return ['light-gray', 'gray', 'light', 'dark', 'primary'].includes(value);
       },
     },
+    topo: {
+      type: Boolean,
+      default: false,
+    },
   },
 };

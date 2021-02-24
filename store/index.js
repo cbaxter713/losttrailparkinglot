@@ -80,7 +80,7 @@ export const actions = {
     //   predicateQuery: this.$prismic.predicates.at('document.type', 'settings'),
     // });
     const settingsDoc = {};
-    commit('SET_SETTINGS', settingsDoc ? settingsDoc.data : {});
+    commit('SET_SETTINGS', settingsDoc ? settingsDoc : {});
   },
   handlePageError(_, obj) {
     obj.error({
