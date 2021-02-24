@@ -1,18 +1,8 @@
 <template>
   <footer class="app-footer">
     <layout-container>
-      <theme theme="dark" class="app-container">
-        <div class="footer-credits">
-          <p>
-            Concepts & Development by
-            <a href="https://github.com/orgs/backDeckLabs/dashboard" target="_blank">
-              @backDeckLabs
-            </a>
-          </p>
-          <h5>Fueled by all of us</h5>
-        </div>
-        <div class="footer-main-content"></div>
-        <div class="footer-legal"></div>
+      <theme theme="dark" class="footer-container">
+        <p>Footer Goes Here</p>
       </theme>
     </layout-container>
   </footer>

@@ -2,7 +2,6 @@
   <header class="app-masthead">
     <layout-container class="masthead-inner">
       <button class="menu-toggle">MENU</button>
-      <button class="tuner-toggle">TUNES</button>
     </layout-container>
   </header>
 </template>
