@@ -39,6 +39,8 @@ html {
   padding: 0; /* Reset `padding` and `margin` of all elements */
   margin: 0;
   font: inherit;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /*  # =================================================================

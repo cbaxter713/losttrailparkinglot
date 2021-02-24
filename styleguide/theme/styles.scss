@@ -1,0 +1,30 @@
+@import '../../assets/styles/global';
+
+$sg-color-primary: #62bb46;
+$sg-color-secondary: #228801;
+
+section[class^='rsg--root'] > div[class^='rsg--wrapper'],
+header[class^='rsg--header'] {
+  padding: $spacing-200 0;
+  border-bottom: 2px solid $color-gray-400;
+
+  /* stylelint-disable */
+  a {
+    &:active,
+    &:hover,
+    &:focus {
+      border-bottom: none;
+      text-decoration: none;
+    }
+  }
+  /* stylelint-enable */
+}
+
+.rsg--footer-6 {
+  display: none !important;
+}
+
+.rsg-root-23,
+.rsg--root-33 {
+  margin-top: $spacing-200;
+}
